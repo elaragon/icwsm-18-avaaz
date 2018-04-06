@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="./css/d3.geomap.css" rel="stylesheet">
+        <script src="./vendor/d3.geomap.dependencies.min.js"></script>
+        <script src="./js/d3.geomap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    <!--h1>&nbsp;Sum of signatures</h1>
+            <h2>Avaaz petitions</h2-->
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dataset
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li class="dataset" src="./data/country_petitions.csv"><a>Number of petitions</a></li>
+                    <li class="dataset" src="./data/country_petitions_log.csv"><a>Number of petitions (log 10)</a></li>
+                    <li class="dataset" src="./data/country_sign.csv"><a>Number of signatures</a></li>
+                    <li class="dataset" src="./data/country_sign_normed.csv"><a>Number of signatures (normed by population)</a></li>
+                    <li class="dataset" src="./data/country_sign_log.csv"><a>Number of signatures (log 10)</a></li>
+                    <li class="dataset" src="./data/country_sign_per_petition.csv"><a>Number of signatures per petition</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="map"></div>
+    </body>
+    <script>
+
+
+        var format = function(d) {
+            return d3.format('.0f')(d);
+        }
+
+        var map = d3.geomap.choropleth()
+            .geofile('./topojson/world/countries.json')
+            .colors(colorbrewer.YlGnBu[9])
+            .column('Value')
+            .format(format)
+            .legend(true)
+            .unitId('Country Code');
+	show_map("./data/empty.csv");
+        
+        $(".dataset").click(function() {
+           $('#map').html("");
+           map.legend(true);
+           show_map($(this).attr('src'));
+        });
+
+        function show_map(dataset) {
+            d3.csv(dataset, function(error, data) {
+                d3.select('#map').datum(data).call(map.draw, map);
+            });
+        }
+
+    </script>
+</html>
