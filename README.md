@@ -1,6 +1,6 @@
 # Online Petitioning Through Data Exploration and What We Found There: A Dataset of Petitions from Avaaz.org
 
-Code and dataset from our ICWSM 2018 dataset paper. 
+Notebook and dataset from our ICWSM 2018 dataset paper. 
 The code of the choropleth maps is based on https://github.com/yaph/d3-geomap.
 When using this dataset, please use the following citation:
 
