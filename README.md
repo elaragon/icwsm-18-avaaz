@@ -7,13 +7,12 @@ When using this dataset, please use the following citation:
 > Aragón P., Sáez-Trumper D., Redi M., Hale S. A., Gómez V., Kaltenbrunner A. (2018) Online Petitioning Through Data Exploration and What We Found There: A Dataset of Petitions from Avaaz.org ICWSM-18 - 12th International AAAI Conference on Web and Social Media, Palo Alto, California, United States.
 
 ## Authors
-Pablo Aragón<sup>1,2</sup>, Diego Sáez-Trumper<sup>1</sup>, Miriam Redi<sup>3</sup>, Scott A. Hale<sup>4</sup>, Vicenç Gómez<sup>1</sup>, Andreas Kaltenbrunner<sup>5</sup>
+Pablo Aragón<sup>1,2</sup>, Diego Sáez-Trumper<sup>1</sup>, Miriam Redi<sup>3</sup>, Scott A. Hale<sup>4</sup>, Vicenç Gómez<sup>1</sup>, Andreas Kaltenbrunner<sup>1</sup>
 
 1. Universitat Pompeu Fabra
 2. Eurecat, Centre Tecnològic de Catalunya
 3. Wikimedia Foundation
 4. Oxford Internet Institute, University of Oxford
-5. NTENT
 
 
 ## Crawling process
